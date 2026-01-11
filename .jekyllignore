@@ -60,3 +60,22 @@ PRODUCTION-README.md
 QUICK-REFERENCE.md
 TESTING-CHECKLIST.md
 UPGRADE-SUMMARY.md
+
+# More backend related files
+backend/node_modules/
+backend/node_modules/**
+backend/dist/
+backend/build/
+backend/coverage/
+
+# Backend specific config
+backend/.env
+backend/.env.*
+backend/*.log
+backend/*.lock
+
+# Frontend build artifacts
+frontend/public/dist/
+frontend/public/build/
+frontend/dist/**
+frontend/build/**

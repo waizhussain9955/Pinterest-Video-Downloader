@@ -1,15 +1,15 @@
-# GitHub Pages Configuration for Pinterest Video Downloader
-# This configuration ensures only documentation files are processed by Jekyll
+# GitHub Pages Configuration for Documentation
+# This ensures only documentation files are processed by Jekyll
 
-title: Pinterest Video Downloader
+title: Pinterest Video Downloader Documentation
 email: your-email@example.com
 description: >-
-  A professional, scalable, and legal Pinterest video downloader with tiered API access,
+  Documentation for the Pinterest Video Downloader - a professional, scalable, and legal Pinterest video downloader with tiered API access,
   caching, blog system, and SEO optimization.
 
 # Site configuration
-baseurl: ""
-url: "https://waizhussain9955.github.io/Pinterest-Video-Downloader"
+baseurl: "/Pinterest-Video-Downloader"
+url: "https://waizhussain9955.github.io"
 github_username: waizhussain9955
 
 # Theme
@@ -69,6 +69,14 @@ exclude:
   - "*.pyc"
   - "__pycache__/"
   - ".pytest_cache/"
+  # Deployment files
+  - DEPLOYMENT-COMMANDS.md
+  - IMPLEMENTATION-COMPLETE.md
+  - IMPLEMENTATION-SUMMARY.md
+  - PRODUCTION-README.md
+  - QUICK-REFERENCE.md
+  - TESTING-CHECKLIST.md
+  - UPGRADE-SUMMARY.md
 
 # Include specific documentation files
 include:
