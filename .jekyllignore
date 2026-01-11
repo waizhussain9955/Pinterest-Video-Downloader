@@ -1,0 +1,62 @@
+# Backend files
+backend/
+backend/**
+
+# Frontend files
+frontend/
+frontend/**
+
+# Node modules
+node_modules/
+node_modules/**
+
+# Vendor directories
+vendor/
+vendor/**
+
+# Configuration files
+package.json
+package-lock.json
+yarn.lock
+npm-debug.log
+.npm/
+
+# Build files
+.git/
+.github/
+.vscode/
+.env
+.env.*
+
+# Lock and log files
+*.lock
+*.log
+
+# Executables
+Dockerfile
+docker-compose.yml
+*.exe
+*.bin
+
+# IDE files
+.idea/
+*.swp
+*.swo
+_site/
+.sass-cache/
+.jekyll-metadata
+.bundle/
+
+# Python files
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Additional ignores
+DEPLOYMENT-COMMANDS.md
+IMPLEMENTATION-COMPLETE.md
+IMPLEMENTATION-SUMMARY.md
+PRODUCTION-README.md
+QUICK-REFERENCE.md
+TESTING-CHECKLIST.md
+UPGRADE-SUMMARY.md
