@@ -208,16 +208,25 @@ main.container {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
   font-weight: 800;
   font-size: var(--font-size-xl);
   color: var(--color-text-primary);
   text-decoration: none;
   white-space: nowrap;
   transition: all var(--transition-fast);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: transparent;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
 }
 
 .logo:hover {

@@ -1,26 +1,14 @@
-FROM node:20-alpine AS build
+FROM node:18-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm ci --only=production
 
-COPY tsconfig.json ./
-COPY src ./src
+COPY . .
 
 RUN npm run build
 
-FROM node:20-alpine AS runtime
+EXPOSE $PORT
 
-WORKDIR /app
-
-ENV NODE_ENV=production
-
-COPY package*.json ./
-RUN npm install --only=production
-
-COPY --from=build /app/dist ./dist
-
-EXPOSE 8080
-
-CMD ["node", "dist/server.js"]
+CMD ["npm", "start"]

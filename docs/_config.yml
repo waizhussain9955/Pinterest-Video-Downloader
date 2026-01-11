@@ -1,0 +1,27 @@
+# Disable Jekyll processing
+---
+title: Pinterest Video Downloader
+email: your-email@example.com
+description: >-
+  A professional, scalable, and legal Pinterest video downloader with tiered API access, 
+  caching, blog system, and SEO optimization.
+baseurl: ""
+url: "https://waizhussain9955.github.io/Pinterest-Video-Downloader"
+github_username: waizhussain9955
+
+# Build settings
+markdown: kramdown
+exclude:
+  - node_modules/
+  - backend/
+  - frontend/
+  - .github/
+  - .git/
+  - .vscode/
+  - "*.md"
+  - "*.json"
+  - "*.lock"
+  - "*.env"
+  - Dockerfile
+  - docker-compose.yml
+---

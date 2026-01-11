@@ -16,6 +16,43 @@
 
 ---
 
+## 🚀 Deployment
+
+### Frontend (Vercel)
+
+Your frontend is already deployed at:
+- **Live URL**: https://pinterest-video-downloader-lgdr8c8yy-waizhussain9955s-projects.vercel.app/
+- **Alternative**: https://pinterest-video-downloader-two.vercel.app/
+
+### Backend (Render.com)
+
+To deploy the backend to Render.com for universal access:
+
+1. **Sign up at [Render.com](https://render.com)**
+2. **Create a new Web Service**
+3. **Connect your GitHub repository**
+4. **Select the `backend` folder**
+5. **Set the following configuration:**
+   - Environment: `Node.js`
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+   - Region: `Oregon`
+6. **Add Environment Variables:**
+   ```bash
+   PORT=10000
+   NODE_ENV=production
+   API_KEY_REQUIRED=false
+   FRONTEND_URL=https://pinterest-video-downloader-9lf7d5js8-waizhussain9955s-projects.vercel.app
+   ALLOWED_ORIGINS=https://pinterest-video-downloader-9lf7d5js8-waizhussain9955s-projects.vercel.app,https://pinterest-video-downloader-two.vercel.app,http://localhost:3000,http://localhost:5173,http://localhost:5174
+   ```
+
+### Mobile Access
+
+**Same WiFi Network:** Works immediately with current setup
+**Different Networks:** Deploy backend to Render.com for universal access
+
+---
+
 ## ✨ Highlights
 
 - 🎨 **Premium UI/UX** - Dark/Light theme, glassmorphism, smooth animations
@@ -279,80 +316,77 @@ Returns API health status.
 
 ## 🚀 Deployment
 
-### Backend Deployment Options
+**IMPORTANT: This is a FULL-STACK application. The frontend and backend must be deployed SEPARATELY.**
 
-#### 1. Railway (Recommended)
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
+### Frontend (Vercel - Static Hosting)
 
-# Login
-railway login
+The frontend is a React/Vite application that gets deployed to Vercel as static files:
 
-# Deploy
-cd backend
-railway init
-railway up
-
-# Add Redis addon in Railway dashboard
-# Set environment variables in Railway dashboard
-```
-
-#### 2. Render
-1. Connect GitHub repo
-2. Select backend folder
-3. Build command: `npm run build`
-4. Start command: `npm start`
-5. Add Redis addon
-6. Set environment variables
-
-#### 3. VPS (DigitalOcean, AWS EC2, etc.)
-```bash
-# SSH into server
-ssh user@your-server
-
-# Clone repo
-git clone https://github.com/yourusername/pinterest-video-downloader
-cd pinterest-video-downloader
-
-# Use docker-compose
-docker-compose up -d
-
-# Or install Redis and run directly
-sudo apt install redis-server
-cd backend
-npm install
-npm run build
-npm start
-```
-
-### Frontend Deployment
-
-#### Vercel (Recommended)
 ```bash
 # Install Vercel CLI
 npm install -g vercel
 
-# Deploy
+# Deploy frontend
 cd frontend
-vercel
-
-# Set environment variable:
-# VITE_API_BASE_URL=https://your-api-domain.com
+vercel --prod
 ```
 
-#### Netlify
-1. Connect GitHub repo
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-4. Environment variables: `VITE_API_BASE_URL`
+Your frontend will be deployed at a URL like: `https://pinterest-video-downloader-[random].vercel.app`
 
-### Redis Options
+### Backend (Node.js Server - REQUIRED!)
 
-- **Railway Redis** (managed, free tier available)
-- **Redis Cloud** (free 30MB)
-- **AWS ElastiCache** (production)
-- **Self-hosted** (Docker or native)
+**THE BACKEND CANNOT RUN ON VERCEL** - Vercel only hosts static files, not Node.js servers.
+
+Choose one of these options to deploy your backend API:
+
+#### Option 1: Render.com (Recommended)
+
+1. **Sign up at [Render.com](https://render.com)**
+2. **Create a new Web Service**
+3. **Connect your GitHub repository**
+4. **Select the `backend` folder**
+5. **Set the following configuration:**
+   - Environment: `Node.js`
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+   - Region: `Oregon`
+6. **Add Environment Variables:**
+   ```bash
+   PORT=10000
+   NODE_ENV=production
+   API_KEY_REQUIRED=false
+   FRONTEND_URL=https://pinterest-video-downloader-[random].vercel.app  # YOUR frontend URL from above
+   ALLOWED_ORIGINS=https://pinterest-video-downloader-[random].vercel.app,http://localhost:3000,http://localhost:5173,http://localhost:5174
+   ```
+
+#### Option 2: Railway
+
+1. **Sign up at [Railway.app](https://railway.app)**
+2. **Create new project and connect GitHub**
+3. **Select the `backend` folder**
+4. **Set environment variables as above**
+
+#### Option 3: AWS/Azure/DigitalOcean
+
+Deploy to any cloud provider that supports Node.js applications.
+
+### Connecting Frontend to Backend
+
+After deploying your backend:
+
+1. Get your backend URL (e.g., `https://your-app-name.onrender.com`)
+2. Go to your Vercel dashboard
+3. Find your frontend project
+4. Go to Settings → Environment Variables
+5. Add: `VITE_API_BASE_URL` = `https://your-backend-url.com`
+6. Redeploy your frontend
+
+### Mobile Access
+
+✅ **Same WiFi Network:** Works with local backend
+✅ **Different Networks:** Works with cloud backend deployment
+
+**Without a backend deployment, the download functionality will not work.**
 
 ## 🔧 Configuration
 

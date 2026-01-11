@@ -29,7 +29,8 @@ const App: React.FC = () => {
       <header className="app-header">
         <div className="container">
           <Link to="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
-            📌 Pinterest Video Downloader
+            <img src="/logo/logo.svg" alt="Pinterest Video Downloader" width="32" height="32" />
+            Pinterest Video Downloader
           </Link>
           
           <button 

@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: pinterest-video-downloader-backend
+    runtime: node
+    region: oregon
+    plan: starter
+    branch: main
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: API_KEY_REQUIRED
+        value: "false"
+      - key: FRONTEND_URL
+        value: "https://pinterest-video-downloader-3l3spvioi-waizhussain9955s-projects.vercel.app"
+      - key: ALLOWED_ORIGINS
+        value: "https://pinterest-video-downloader-3l3spvioi-waizhussain9955s-projects.vercel.app,https://pinterest-video-downloader-one.vercel.app,http://localhost:3000,http://localhost:5173,http://localhost:5174"
