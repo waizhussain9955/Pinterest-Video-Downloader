@@ -160,7 +160,7 @@ GET /api/v1/blog/:slug        # Get single post
   canonical="https://yourdomain.com/page"
   ogType="website|article"
   ogImage="/image.jpg"
-  article={{ publishedTime, author, tags }}
+  article: { publishedTime, author, tags }
 />
 ```
 
