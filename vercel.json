@@ -2,21 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/pinterest.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/pinterest.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
+      "dest": "/api/pinterest.js"
     }
-  ],
-  "functions": {
-    "api/pinterest.js": {
-      "maxDuration": 60,
-      "memory": 1024
-    }
-  }
+  ]
 }
