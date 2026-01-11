@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/pinterest",
+      "destination": "/api/pinterest.js"
+    }
+  ],
+  "functions": {
+    "api/pinterest.js": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  },
+  "framework": "none"
+}
