@@ -5,7 +5,7 @@
       "src": "api/pinterest.js",
       "use": "@vercel/node",
       "config": {
-        "nodeVersion": "18.x"
+        "nodeVersion": "24.x"
       }
     },
     {
@@ -14,7 +14,7 @@
       "config": {
         "distDir": "dist",
         "buildCommand": "cd frontend && bash vercel-build.sh",
-        "nodeVersion": "18.x"
+        "nodeVersion": "24.x"
       }
     }
   ],
