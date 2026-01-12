@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "npm ci --legacy-peer-deps && vite build",
     "preview": "vite preview",
-    "postinstall": "chmod +x node_modules/.bin/vite && chmod +x vercel-build.sh || exit 0",
+    "postinstall": "node -e \"console.log('Postinstall completed');\" || exit 0",
     "vercel-build": "npm ci --legacy-peer-deps && vite build"
   },
   "dependencies": {
